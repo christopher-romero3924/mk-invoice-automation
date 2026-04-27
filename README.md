@@ -8,17 +8,13 @@ Overview
 When a booking invoice is finalized (marked complete in cell E36), the watcher script detects it, extracts the reservation details, appends a row to the Raw_Invoice_Data table in Priority_use_2026_CLEAN_3.xlsx, updates the correct year-specific sheet, and moves the invoice to the Complete Invoices archive folder.
 
 How It Works
-Working Invoices/
-  └── MK_Invoice_XXXX.xlsx   ← Drop invoice here
-          ↓
-  mk_invoice_watcher.py detects E36 = "YES"
-          ↓
-  Parses fields from invoice
-          ↓
-  Writes row → Raw_Invoice_Data table + year sheet (24/25/26)
-          ↓
-Complete Invoices/
-  └── MK_Invoice_XXXX.xlsx   ← File archived here
+A working invoice is completed.
+mk_invoice_watcher.py detects E36 = "YES" 
+Invoice fields are parsed.
+Data written to rows in the Raw_Invoice_Data table + year sheet.
+Completed invoices are archived in the completed folder.
+
+ 
 File Structure
 MK Automation Test/
 ├── mk_invoice_watcher.py        # Main watcher script
